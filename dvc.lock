@@ -1,0 +1,40 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/data_ingestion.py
+    deps:
+    - path: src/data_ingestion.py
+      hash: md5
+      md5: c48b2c244bec808016dcdc5d6c0dc432
+      size: 3271
+      isexec: true
+    outs:
+    - path: artifacts/raw/Images/
+      hash: md5
+      md5: c0e9e54ca76e56edb2a5587daba98d16.dir
+      size: 2435540
+      nfiles: 333
+    - path: artifacts/raw/Labels/
+      hash: md5
+      md5: fcc5c8e9eb27d94a6aae879f0b2e5b00.dir
+      size: 6651
+      nfiles: 333
+  model_training:
+    cmd: python src/model_training.py
+    deps:
+    - path: artifacts/raw/
+      hash: md5
+      md5: adfb9f01a07ced01f71d76b2cc3d7908.dir
+      size: 2442191
+      nfiles: 666
+    - path: src/model_training.py
+      hash: md5
+      md5: 80c8aa3f363af1cdf443292d5aa54f90
+      size: 5181
+      isexec: true
+    outs:
+    - path: artifacts/models/fasterrcnn.pth
+      hash: md5
+      md5: ae116e956e3af5cbafff5c351a294594
+      size: 165724408
+      isexec: true

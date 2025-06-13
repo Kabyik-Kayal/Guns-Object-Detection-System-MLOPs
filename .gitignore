@@ -1,0 +1,7 @@
+venv/
+artifacts/
+Guns_Object_Detection.egg-info
+tensorboard_logs/
+logs/
+__pycache__/
+.dvc/

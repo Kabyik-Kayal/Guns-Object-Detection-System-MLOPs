@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+kagglehub
+torch
+opencv-python-headless
+torchvision
+tensorboard
+dvc
