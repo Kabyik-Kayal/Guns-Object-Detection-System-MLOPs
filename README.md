@@ -809,5 +809,3 @@ def validate_image(file: UploadFile):
 **Status**: Production Ready 🚀
 
 ---
-
-*For the latest updates and releases, please check the [GitHub repository](https://github.com/your-username/Guns-Object-Detection-System-MLOPs).*
