@@ -119,7 +119,7 @@ if __name__ == "__main__":
         model_class=FasterRCNNModel,
         num_classes=2,  # Adjust based on your dataset
         learning_rate=0.001,
-        epochs=1,  # Adjust based on your needs
+        epochs=30,  # Adjust based on your needs
         dataset_path="artifacts/raw/",  # Adjust to your dataset path
         device=device
     )
