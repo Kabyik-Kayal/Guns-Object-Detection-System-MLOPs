@@ -1,0 +1,7 @@
+numpy
+torch
+opencv-python-headless
+torchvision
+fastapi[all]
+uvicorn
+Pillow

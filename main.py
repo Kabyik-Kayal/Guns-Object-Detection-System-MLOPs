@@ -1,7 +1,9 @@
 import io
 import numpy as np
 from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 import torch
 from torchvision import transforms
 from PIL import Image, ImageDraw
@@ -24,7 +26,19 @@ transform = transforms.Compose([
     transforms.ToTensor(),
 ])
 
-app = FastAPI()
+app = FastAPI(title="Guns Object Detection System", description="AI-powered weapon detection system")
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Mount static files
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 def predict_and_draw(image: Image.Image):
     image_tensor = transform(image).unsqueeze(0).to(device)
@@ -46,9 +60,11 @@ def predict_and_draw(image: Image.Image):
 
     return img_rgb
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def read_root():
-    return {"message": "Welcome to the Guns Object Detection API!"}
+    with open("static/index.html", "r") as f:
+        html_content = f.read()
+    return HTMLResponse(content=html_content)
 
 @app.post("/predict/")
 async def predict(file:UploadFile=File(...)):

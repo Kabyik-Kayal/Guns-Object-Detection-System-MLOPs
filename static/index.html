@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guns Object Detection System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>GuardAI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#about" class="nav-link">About</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        AI-Powered <span class="gradient-text">Weapon Detection</span>
+                    </h1>
+                    <p class="hero-description">
+                        Advanced machine learning technology to detect firearms and weapons in images with high accuracy and real-time processing.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">89.9%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">&lt;0.8s</span>
+                            <span class="stat-label">Processing Time</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-demo">
+                    <div class="detection-panel">
+                        <div class="panel-header">
+                            <h3>Upload Image for Detection</h3>
+                            <div class="status-indicator">
+                                <span class="status-dot"></span>
+                                <span>AI Ready</span>
+                            </div>
+                        </div>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h4>Drag & drop your image here</h4>
+                                <p>or click to browse files</p>
+                                <button type="button" class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                                    Choose File
+                                </button>
+                                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+
+                        <div class="image-preview" id="imagePreview" style="display: none;">
+                            <img id="previewImg" alt="Preview">
+                            <div class="preview-actions">
+                                <button class="btn btn-primary" id="analyzeBtn">
+                                    <i class="fas fa-search"></i>
+                                    Analyze Image
+                                </button>
+                                <button class="btn btn-secondary" id="clearBtn">
+                                    <i class="fas fa-times"></i>
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                            <div class="spinner"></div>
+                            <p>Analyzing image with AI...</p>
+                        </div>
+
+                        <div class="results-section" id="resultsSection" style="display: none;">
+                            <div class="results-header">
+                                <h4>Detection Results</h4>
+                                <div class="confidence-badge" id="confidenceBadge"></div>
+                            </div>
+                            <div class="result-image-container">
+                                <img id="resultImg" alt="Detection Result">
+                            </div>
+                            <div class="results-info" id="resultsInfo"></div>
+                            <div class="results-actions">
+                                <button class="btn btn-primary" id="newPredictionBtn">
+                                    <i class="fas fa-plus"></i>
+                                    New Prediction
+                                </button>
+                                <button class="btn btn-secondary" id="downloadBtn">
+                                    <i class="fas fa-download"></i>
+                                    Download Result
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Advanced Detection Features</h2>
+                <p>Cutting-edge AI technology for comprehensive security monitoring</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Real-time Detection</h3>
+                    <p>Instant analysis and detection of weapons in uploaded images with millisecond response times.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Deep Learning AI</h3>
+                    <p>Powered by Faster R-CNN architecture with ResNet-50 backbone for superior accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Integration</h3>
+                    <p>Seamless cloud deployment available with scalable infrastructure for enterprise solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About GuardAI</h2>
+                    <p>
+                        GuardAI represents the next generation of security technology, leveraging state-of-the-art
+                        machine learning algorithms to detect weapons and firearms in real-time. Our system is built
+                        on robust Faster R-CNN architecture, ensuring reliable and accurate threat detection.
+                    </p>
+                    <div class="tech-stack">
+                        <h4>Technology Stack</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">Faster R-CNN</span>
+                            <span class="tech-badge">Computer Vision</span>
+                            <span class="tech-badge">Deep Learning</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="ai-visualization">
+                        <div class="neural-network">
+                            <div class="layer input-layer">
+                                <div class="neuron"></div>
+                                <div class="neuron"></div>
+                                <div class="neuron"></div>
+                            </div>
+                            <div class="layer hidden-layer">
+                                <div class="neuron"></div>
+                                <div class="neuron"></div>
+                                <div class="neuron"></div>
+                                <div class="neuron"></div>
+                            </div>
+                            <div class="layer output-layer">
+                                <div class="neuron"></div>
+                                <div class="neuron"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>GuardAI</span>
+                    </div>
+                    <p>Advanced AI-powered security solutions for a safer world.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#docs">Documentation</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#careers">Careers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GuardAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
