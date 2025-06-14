@@ -49,8 +49,6 @@ This project builds a robust object detection system specifically designed to id
 
 ### Core Dependencies
 
-- Python 3.11
-
 Please check the [requirements.txt](requirements.txt) for all the dependencies
 
 ## 🛠️ Installation & Setup
