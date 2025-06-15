@@ -5,3 +5,4 @@ torchvision
 fastapi[all]
 uvicorn
 Pillow
+tqdm

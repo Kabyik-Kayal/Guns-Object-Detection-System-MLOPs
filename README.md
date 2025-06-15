@@ -11,6 +11,8 @@ An end-to-end **Machine Learning Operations (MLOPs)** system for detecting guns 
 
 This system uses state-of-the-art computer vision techniques to detect firearms in images, making it suitable for security applications, surveillance systems, and safety monitoring. The project follows MLOPs best practices with automated pipelines, experiment tracking, and containerized deployment.
 
+![Overview](static/overview.jpg)
+
 ### Key Features
 
 - 🧠 **Deep Learning Model**: Faster R-CNN with ResNet-50 backbone
@@ -248,22 +250,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - **Dataset**: Thanks to [issaisasank](https://www.kaggle.com/issaisasank) for the guns detection dataset
-- **PyTorch Team**: For the excellent deep learning framework
-- **FastAPI**: For the modern web framework
-- **TorchVision**: For pre-trained models and utilities
-
-## 📞 Support
-
-If you have any questions or issues:
-
-1. Check the [Issues](https://github.com/Kabyik-Kayal/Guns-Object-Detection-System-MLOPs/issues) page
-2. Create a new issue with detailed description
-3. Contact: [Your Email]
+- **Tutorial**: Thanks to Sudhanshu Gussain for the comprehensive Tutorial of the project
 
 ## 🚨 Disclaimer
 
-This system is designed for educational and research purposes. Please ensure compliance with local laws and regulations when using weapon detection systems. The accuracy of detection may vary based on image quality and conditions.
+This system is designed for educational and research purposes.
 
----
-
-**Made with ❤️ for safer communities**
+**Made with ❤️ for Neural Networks**
